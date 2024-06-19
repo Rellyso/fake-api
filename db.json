@@ -1,6 +1,27 @@
 {
   "clients": [
     {
+      "id": "7d43205b-fbf4-4439-a169-f5eee4427440",
+      "name": "João Silva",
+      "cpf": "22222222222",
+      "consultDatetime": "2023-11-02T05:43:51Z",
+      "consultedValue": 3360.05,
+      "approvedValue": 13215.08,
+      "status": 2,
+      "phoneNumber": "11888888888",
+      "blocked": true
+    },
+    {
+      "id": "8d43205b-fbf4-4439-a169-f5eee4427440",
+      "name": "João Silva",
+      "cpf": "11111111111",
+      "consultDatetime": "2023-11-02T05:43:51Z",
+      "consultedValue": 3360.05,
+      "approvedValue": 13215.08,
+      "status": 3,
+      "phoneNumber": "11999999999"
+    },
+    {
       "id": "9d43205b-fbf4-4439-a169-f5eee4427440",
       "name": "Mattias Iacobacci",
       "cpf": "61027104480",
