@@ -1,6 +1,16 @@
 {
   "clients": [
     {
+      "id": "6d43205b-fbf4-4439-a169-f5eee4427440",
+      "name": "João Silva",
+      "cpf": "33333333333",
+      "consultDatetime": "2023-11-02T05:43:51Z",
+      "consultedValue": 3360.05,
+      "approvedValue": 13215.08,
+      "status": 2,
+      "phoneNumber": "11777777777"
+    },
+    {
       "id": "7d43205b-fbf4-4439-a169-f5eee4427440",
       "name": "João Silva",
       "cpf": "22222222222",

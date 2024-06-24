@@ -5,4 +5,5 @@ export interface QueryStatus {
   consultedValue: number
   approvedValue: number
   status: number
+  phoneNumber: string
 }

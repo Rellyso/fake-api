@@ -17,15 +17,22 @@ server.post('/query-status', (req: Request, res: Response) => {
   const dbJson = fs.readFileSync(dbPath, 'utf8');
   const db = JSON.parse(dbJson);
 
+  const phoneNumberExistsForDifferentCpf = db.clients.some((client: any) => client.phoneNumber === phoneNumber && client.cpf !== cpf);
+  if (phoneNumberExistsForDifferentCpf) {
+    return res.status(400).json({ message: "Este número de celular está associado a outro CPF e por isso não é possível realizar a consulta. Verifique com o cliente o celular cadastrado anteriormente para consultar o crédito disponível" });
+  }
+
   const client = db.clients.find((client: any) => client.cpf === cpf);
 
   if (client && client.blocked) {
     return res.status(400).json({ message: "Houve um problema com o CPF consultado e por isso não podemos seguir" });
   }
 
-  if (!client || client.phoneNumber !== phoneNumber) {
+  if (client.phoneNumber !== phoneNumber) {
     return res.status(400).json({ message: "Existe outro número de celular associado a este CPF e por isso não é possível realizar a consulta. Verifique com o cliente o celular cadastrado anteriormente para consultar o crédito disponível" });
   }
+  return res.status(200).json({ message: "Cliente encontrado e dados conferem." });
+
 });
 
 server.get('/query-status/count', (req: Request, res: Response) => {
